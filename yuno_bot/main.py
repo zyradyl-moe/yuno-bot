@@ -12,10 +12,7 @@ async def on_ready() :
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name="the role of Chief Virtual Intelligence."))
 
 try:
-  token = os.getenv('DISCORD_TOKEN')
-  if token == "":
-      raise Exception("how did you plan to authenticate today??")
-  client.run (token)
+  client.run (os.getenv('DISCORD_TOKEN'))
 except discord. HTTPException as e:
   if e.status == 429:
     print ("check stack overflow ur shit is fucked yo")
